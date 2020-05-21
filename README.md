@@ -6,3 +6,6 @@ It is based on *The Net Ninja*'s [React tutorial](https://www.youtube.com/watch?
 - Dedicated button for deleting a todo
   - Animation for deleting (strikethrough and fade)
 - Drag and drop re-ordering
+
+## Try it here
+https://tootboi.github.io/React-ToDoApp/
