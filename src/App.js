@@ -6,8 +6,7 @@ import './App.css';
 class App extends Component {
   state = {
     todos: [
-      {content: 'buy milk'},
-      {content: 'play games'}
+      
     ]
   }
   deleteTodo = (index) => {
@@ -31,8 +30,8 @@ class App extends Component {
         <h1>To dos</h1>
         <div className="container">
           <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}/>
-          <AddTodo addTodo={this.addTodo}/>
         </div>
+        <AddTodo addTodo={this.addTodo}/>
       </div>
     );
   }
