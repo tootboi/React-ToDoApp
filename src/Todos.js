@@ -4,16 +4,16 @@ function Todos({todos, deleteTodo}) {
     const todoList = todos.length ? (
         todos.map(function(todo, index) {
             return (
-                <div className="collection-item" key={index}>
+                <div className="todo" key={index}>
                     <span onClick={() => {deleteTodo(index)}}>{todo.content}</span>
                 </div>
             )
         })
     ) : (
-        <p className="center">No to dos</p>
+        <div className='todo center'>No to dos</div>
     )
     return (
-        <div className="todos collection">
+        <div className="">
             {todoList}
         </div>
     )

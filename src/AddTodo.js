@@ -19,7 +19,7 @@ class AddTodo extends Component {
 
     render(){
         return (
-            <div>
+            <div className='form'>
                 <form action="" onSubmit={this.handleSubmit}>
                     <label htmlFor="">Add a to do:</label>
                     <input type="text" onChange={this.handleChange} value={this.state.content}/>

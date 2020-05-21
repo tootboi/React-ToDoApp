@@ -1,0 +1,52 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Fredoka One', cursive;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 21.44px;
+    margin: 0;
+}
+
+form {
+    padding-left: 3vw;
+}
+
+input {
+    width: 80%;
+    margin-left: 20px;
+    border: none;
+    border-bottom: 1.5px solid rgb(190, 190, 190);
+}
+
+.container {
+    position: relative;
+    height: 80vh;
+    width: 80vw;
+    margin: auto;
+    border: 1.5px solid gray;
+    border-radius: 6px;
+}
+
+.todo {
+    padding: 15px 15px 10px 30px;
+    border-bottom: 1.5px solid rgb(190, 190, 190);
+}
+
+.center {
+    text-align: center;
+    padding: 30px;
+    border: none;
+}
+
+.form {
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+}
