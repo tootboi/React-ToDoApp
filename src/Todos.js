@@ -5,12 +5,14 @@ function Todos({todos, deleteTodo}) {
         todos.map(function(todo, index) {
             return (
                 <div className="todo" key={index}>
-                    <span onClick={() => {deleteTodo(index)}}>{todo.content}</span>
+                    <span className="dragBtn"></span>
+                    <span>{todo.content}</span>
+                    <span className="deleteBtn" onClick={() => {deleteTodo(index)}}>&times;</span>
                 </div>
             )
         })
     ) : (
-        <div className='todo center'>No to dos</div>
+        <div className='todo center'>/ / /</div>
     )
     return (
         <div className="">
