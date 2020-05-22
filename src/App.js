@@ -6,7 +6,10 @@ import './App.css';
 class App extends Component {
   state = {
     todos: [
-      
+      {content: "Editing existing todos"},
+      {content: "Implement sub-todo"},
+      {content: "Animation for deleting (strikethorugh and fade)"},
+      {content: "Drag and drop re-ordering"},
     ]
   }
   deleteTodo = (index) => {

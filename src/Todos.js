@@ -6,7 +6,7 @@ function Todos({todos, deleteTodo}) {
             return (
                 <div className="todo" key={index}>
                     <span className="dragBtn"></span>
-                    <span>{todo.content}</span>
+                    <span className="dos">{todo.content}</span>
                     <span className="deleteBtn" onClick={() => {deleteTodo(index)}}>&times;</span>
                 </div>
             )
