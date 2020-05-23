@@ -1,13 +1,12 @@
 import React from 'react';
+import EditTodo from './EditTodo';
 
-function Todos({todos, deleteTodo}) {
+function Todos({todos, deleteTodo, editTodo}) {
     const todoList = todos.length ? (
         todos.map(function(todo, index) {
             return (
                 <div className="todo" key={index}>
-                    <span className="dragBtn"></span>
-                    <span className="dos">{todo.content}</span>
-                    <span className="deleteBtn" onClick={() => {deleteTodo(index)}}>&times;</span>
+                    <EditTodo todo={todo} index={index} deleteTodo={deleteTodo} editTodo={editTodo}/>
                 </div>
             )
         })

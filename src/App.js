@@ -26,13 +26,21 @@ class App extends Component {
       todos: todos
     })
   }
+  editTodo = (todo, index) => {
+    console.log(this.state.todos[index])
+    const newTodos = this.state.todos.slice()
+    newTodos[index] = {content: todo}
+    this.setState({
+      todos: newTodos
+    })
+  }
 
   render() {
     return (
       <div className="todoApp">
         <h1>To dos</h1>
         <div className="container">
-          <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}/>
+          <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} editTodo={this.editTodo}/>
         </div>
         <AddTodo addTodo={this.addTodo}/>
       </div>
