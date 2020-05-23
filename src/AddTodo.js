@@ -11,10 +11,12 @@ class AddTodo extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addTodo(this.state);
-        this.setState({
+        if(this.state.content.replace(/\s/g, '') !== '') {
+            this.props.addTodo(this.state);
+            this.setState({
             content: ''
         })
+        }
     }
 
     render(){
