@@ -11,7 +11,15 @@ class EditTodo extends Component {
         })
     }
     handleClick = (e) => {
+        this.setState({
+            content: this.props.todo.content
+        })
         this.props.deleteTodo(this.props.index)
+    }
+    componentDidUpdate() {
+        this.state.content = this.props.todo.content
+        console.log(this.state.content, this.props.todo.content)
+        
     }
 
     render() {
