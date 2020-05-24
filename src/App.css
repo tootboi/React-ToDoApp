@@ -96,7 +96,23 @@ input:focus {
 .mainTodo {
     position: relative;
 }
+.subTodoList {
+    position: relative;
 
+    width: 97%;
+    left: 2%;
+    margin-right: 0;
+}
 .subTodo {
     position: relative;
+    left: 1%;
+    border-bottom: 2px solid rgb(197, 197, 197);
+}
+
+.subTodo .deleteBtn {
+    color: gray;
+}
+
+.subTodo .dos {
+    color: rgb(51, 51, 51);
 }
