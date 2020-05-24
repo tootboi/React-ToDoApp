@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 
 class AddTodo extends Component {
     state = {
-        content: ''
+        content: '',
+        id: ''
     }
     handleChange = (e) => {
         this.setState({
-            content: e.target.value
+            content: e.target.value,
+            id: Date.now()
         })
     }
     handleSubmit = (e) => {

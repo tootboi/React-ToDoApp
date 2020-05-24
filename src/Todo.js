@@ -2,24 +2,16 @@ import React, { Component } from 'react';
 
 class EditTodo extends Component {
     state = {
-        content: this.props.todo.content
+        content: this.props.todo
     }
     handleChange = (e) => {
-        this.props.editTodo(e.target.value, this.props.index)
+        this.props.editTodo(e.target.value, this.props.id)
         this.setState({
             content: e.target.value
         })
     }
     handleClick = (e) => {
-        this.setState({
-            content: this.props.todo.content
-        })
-        this.props.deleteTodo(this.props.index)
-    }
-    componentDidUpdate() {
-        this.state.content = this.props.todo.content
-        console.log(this.state.content, this.props.todo.content)
-        
+        this.props.deleteTodo(this.props.id)
     }
 
     render() {

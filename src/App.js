@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
-import Todos from './Todos';
+import Todo from './Todo';
 import AddTodo from './AddTodo';
 import './App.css';
 
 class App extends Component {
-  state = {
-    todos: [
-      {content: "Editing existing todos"},
-      {content: "Implement sub-todo"},
-      {content: "Animation for deleting (strikethorugh and fade)"},
-      {content: "Drag and drop re-ordering"},
-    ]
+  constructor(props) {
+    super(props)
+    this.state = {
+      todos: [
+        {content: "Implement sub-todo", id:"unique2"},
+        {content: "Animation for deleting (strikethorugh and fade)", id:"unique3"},
+        {content: "Drag and drop re-ordering", id:"unique4"},
+      ]
+    }
+    this.deleteTodo = this.deleteTodo.bind(this)
+    this.addTodo = this.addTodo.bind(this)
+    this.editTodo = this.editTodo.bind(this)
   }
-  deleteTodo = (index) => {
-    const todos = this.state.todos.filter(function(todo, i) {
-      return i !== index
+
+  deleteTodo = (deleteId) => {
+    const todos = this.state.todos.filter(todo => {
+      return todo.id !== deleteId
     });
     this.setState({
       todos: todos
@@ -26,10 +32,14 @@ class App extends Component {
       todos: todos
     })
   }
-  editTodo = (todo, index) => {
-    console.log(this.state.todos[index])
-    const newTodos = this.state.todos.slice()
-    newTodos[index] = {content: todo}
+  editTodo = (newContent, editId) => {
+    const newTodos = this.state.todos.map(todo => {
+      if(todo.id === editId) {
+        return todo = {content: newContent, id: todo.id}
+      } else {
+        return todo
+      }
+    })
     this.setState({
       todos: newTodos
     })
@@ -40,7 +50,13 @@ class App extends Component {
       <div className="todoApp">
         <h1>To dos</h1>
         <div className="container">
-          <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} editTodo={this.editTodo}/>
+          {this.state.todos.length ? (
+            this.state.todos.map(todo => (
+              <Todo key={todo.id} todo={todo.content} id={todo.id} deleteTodo={this.deleteTodo} editTodo={this.editTodo}/>
+            ))
+          ) : (
+            <div className='todo center'>/ / /</div>
+          )}
         </div>
         <AddTodo addTodo={this.addTodo}/>
       </div>
