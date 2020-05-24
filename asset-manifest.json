@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/React-ToDoApp/static/css/main.12c4881a.chunk.css",
-    "main.js": "/React-ToDoApp/static/js/main.c24ecbf2.chunk.js",
-    "main.js.map": "/React-ToDoApp/static/js/main.c24ecbf2.chunk.js.map",
+    "main.css": "/React-ToDoApp/static/css/main.acff7a1b.chunk.css",
+    "main.js": "/React-ToDoApp/static/js/main.bb3061a1.chunk.js",
+    "main.js.map": "/React-ToDoApp/static/js/main.bb3061a1.chunk.js.map",
     "runtime-main.js": "/React-ToDoApp/static/js/runtime-main.0b60028d.js",
     "runtime-main.js.map": "/React-ToDoApp/static/js/runtime-main.0b60028d.js.map",
-    "static/js/2.9f153dfb.chunk.js": "/React-ToDoApp/static/js/2.9f153dfb.chunk.js",
-    "static/js/2.9f153dfb.chunk.js.map": "/React-ToDoApp/static/js/2.9f153dfb.chunk.js.map",
+    "static/js/2.3e0b2270.chunk.js": "/React-ToDoApp/static/js/2.3e0b2270.chunk.js",
+    "static/js/2.3e0b2270.chunk.js.map": "/React-ToDoApp/static/js/2.3e0b2270.chunk.js.map",
     "index.html": "/React-ToDoApp/index.html",
-    "precache-manifest.612ed2da428745b6ed8ed29e23f12f99.js": "/React-ToDoApp/precache-manifest.612ed2da428745b6ed8ed29e23f12f99.js",
+    "precache-manifest.ff6a9559ab5fcd52ba0448f23d98b143.js": "/React-ToDoApp/precache-manifest.ff6a9559ab5fcd52ba0448f23d98b143.js",
     "service-worker.js": "/React-ToDoApp/service-worker.js",
-    "static/css/main.12c4881a.chunk.css.map": "/React-ToDoApp/static/css/main.12c4881a.chunk.css.map",
-    "static/js/2.9f153dfb.chunk.js.LICENSE.txt": "/React-ToDoApp/static/js/2.9f153dfb.chunk.js.LICENSE.txt"
+    "static/css/main.acff7a1b.chunk.css.map": "/React-ToDoApp/static/css/main.acff7a1b.chunk.css.map",
+    "static/js/2.3e0b2270.chunk.js.LICENSE.txt": "/React-ToDoApp/static/js/2.3e0b2270.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0b60028d.js",
-    "static/js/2.9f153dfb.chunk.js",
-    "static/css/main.12c4881a.chunk.css",
-    "static/js/main.c24ecbf2.chunk.js"
+    "static/js/2.3e0b2270.chunk.js",
+    "static/css/main.acff7a1b.chunk.css",
+    "static/js/main.bb3061a1.chunk.js"
   ]
 }
