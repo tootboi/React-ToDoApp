@@ -70,7 +70,7 @@ input:focus {
 .deleteBtn {
     position: absolute;
     right: 1vw;
-    bottom: 20%;
+    bottom: 0em;
     font-size: x-large;
     cursor: pointer;
 }
@@ -91,4 +91,12 @@ input:focus {
 .fade {
     opacity: 0;
     transition: .5s;
+}
+
+.mainTodo {
+    position: relative;
+}
+
+.subTodo {
+    position: relative;
 }

@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class AddTodo extends Component {
     state = {
         content: '',
-        id: ''
+        id: '',
+        subTodos: []
     }
     handleChange = (e) => {
         this.setState({
