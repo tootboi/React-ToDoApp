@@ -98,7 +98,6 @@ input:focus {
 }
 .subTodoList {
     position: relative;
-
     width: 97%;
     left: 2%;
     margin-right: 0;
@@ -115,4 +114,19 @@ input:focus {
 
 .subTodo .dos {
     color: rgb(51, 51, 51);
+}
+
+.darkMode {
+    background-color: rgb(51, 51, 51);
+    color: gray;
+}
+
+#themeBtn {
+    cursor: pointer;
+    position: absolute;
+    right: 2vw;
+    top: 5vh;
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
 }
