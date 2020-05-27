@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import {ThemeContext} from '../contexts/ThemeContext';
 
 class SubTodo extends Component {
+    static contextType = ThemeContext;
     state = {
         content: this.props.todo.content,
         id: this.props.todo.id
@@ -13,10 +15,12 @@ class SubTodo extends Component {
     }
 
     render() {
+        const {isLightMode, light, dark} = this.context;
+        const theme = isLightMode ? light : dark;
         return (
             <div className="subTodo">
                 <span className="dragBtn"></span>
-                <input type="text" className="dos" onChange={this.handleChange} onDoubleClick={this.props.createSub} value={this.state.content} autoFocus/>
+                <input style={{ background: theme.bgColor, color: theme.subColor}} type="text" className="dos" onChange={this.handleChange} onDoubleClick={this.props.createSub} value={this.state.content} autoFocus/>
                 <span className="deleteBtn" onClick={() => {this.props.deleteSubTodo(this.state.id)}}>&times;</span>
             </div>
         );

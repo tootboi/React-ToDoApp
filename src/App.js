@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Todo from './Todo';
-import AddTodo from './AddTodo';
+import Todo from './components/Todo';
+import AddTodo from './components/AddTodo';
+import ThemeContextProvider from './contexts/ThemeContext';
+import ThemeToggle from './components/ThemeToggle';
 import './App.css';
 
 class App extends Component {
@@ -90,7 +92,9 @@ class App extends Component {
   render() {
     return (
       <div className="todoApp">
+        <ThemeContextProvider>
         <h1>To dos</h1>
+        <ThemeToggle/>
         <div className="container">
           {this.state.todos.length ? (
             this.state.todos.map(todo => (
@@ -107,6 +111,7 @@ class App extends Component {
           )}
         </div>
         <AddTodo addTodo={this.addTodo}/>
+        </ThemeContextProvider>
       </div>
     );
   }
