@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {ThemeContext} from '../contexts/ThemeContext';
+import { v1 as uuidv1 } from 'uuid';
 
 class AddTodo extends Component {
     static contextType = ThemeContext;
@@ -11,11 +12,12 @@ class AddTodo extends Component {
     handleChange = (e) => {
         this.setState({
             content: e.target.value,
-            id: Date.now()
+            id: uuidv1()
         })
     }
     handleSubmit = (e) => {
         e.preventDefault();
+        //prevents todos with only whitespaces.
         if(this.state.content.replace(/\s/g, '') !== '') {
             this.props.addTodo(this.state);
             this.setState({
@@ -30,7 +32,7 @@ class AddTodo extends Component {
         return (
             <div className='form' style={{ background: theme.bgColor, color: theme.subColor}}>
                 <form action="" onSubmit={this.handleSubmit}>
-                    <input style={{ background: theme.bgColor, color: theme.subColor}} type="text" className="userInput" placeholder="Add a to do" onChange={this.handleChange} value={this.state.content}/>
+                    <input required style={{ background: theme.bgColor, color: theme.subColor}} type="text" className="userInput" placeholder="Add a to do" onChange={this.handleChange} value={this.state.content}/>
                 </form>
             </div>
         )
