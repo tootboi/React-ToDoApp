@@ -18,7 +18,7 @@ const SubTodo = (props) => {
         <div className="subTodo">
             <span className="dragBtn"></span>
             <input style={{ background: theme.bgColor, color: theme.subColor}} type="text" className="dos" onChange={handleChange} onDoubleClick={props.createSub} value={todo.content} autoFocus/>
-            <span className="deleteBtn" onClick={() => {props.deleteSubTodo(this.state.id)}}>&times;</span>
+            <span className="deleteBtn" onClick={() => {props.deleteSubTodo(todo.id)}}>&times;</span>
         </div>
     );
 }
