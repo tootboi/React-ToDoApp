@@ -13,7 +13,7 @@ class App extends Component {
         {content: "Implement sub-todo", id:"unique2", 
           subTodos: [
             {content: "Like this", id: "unique2-1"},
-            {content: "And this", id: "unique2-2"}
+            {content: "Double click to add a sub-todo", id: "unique2-2"}
           ]},
         {content: "Animation for deleting (strikethorugh and fade)", id:"unique3", 
           subTodos: [
