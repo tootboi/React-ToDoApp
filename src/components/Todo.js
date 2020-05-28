@@ -1,60 +1,63 @@
-import React, { Component } from 'react';
+import React, { useState, useContext } from 'react';
 import SubTodo from './SubTodo';
 import {ThemeContext} from '../contexts/ThemeContext';
+import { v1 as uuidv1 } from 'uuid';
 
-class EditTodo extends Component {
-    static contextType = ThemeContext;
-    state = {
-        content: this.props.todo,
-        id: this.props.id,
-        subTodos: this.props.subTodos
-    }
-    handleChange = (e) => {
-        this.props.editTodo(e.target.value, this.state.id)
-        this.setState({
-            content: e.target.value
+const Todo = (props) => {
+    const [todo, setTodo] = useState({
+        content: props.todo,
+        id: props.id,
+        subTodos: props.subTodos
+    })
+    const handleChange = (e) => {
+        props.editTodo(e.target.value, todo.id)
+        setTodo({
+            content: e.target.value,
+            id: props.id,
+            subTodos: props.subTodos
         })
     }
-    createSub = (e) => {
-        const subTodos = [...this.state.subTodos, {content:'', id:Date.now()}]
-        this.setState({
+    const createSub = (e) => {
+        const subTodos = [...todo.subTodos, {content:'', id:uuidv1()}]
+        setTodo({
+            content: props.todo,
+            id: props.id,
             subTodos: subTodos
         })
     }
-    deleteSubTodo = (deleteId) => {
+    const deleteSubTodo = (deleteId) => {
         //this does not delete the subTodo from props (i.e. from App.js state)
-        const subTodos = this.state.subTodos.filter(todo => {
+        const subTodos = todo.subTodos.filter(todo => {
             return todo.id !== deleteId
         })
-        this.setState({
+        setTodo({
+            content: props.todo,
+            id: props.id,
             subTodos: subTodos
         })
-      }
-
-    render() {
-        const {isLightMode, light, dark} = this.context;
-        const theme = isLightMode ? light : dark;
-        return (
-            <div className="todo" style={{ background: theme.bgColor, color: theme.todoColor}}>
-                <div className="mainTodo">
-                    <span className="dragBtn"></span>
-                    <input style={{ background: theme.bgColor, color: theme.todoColor}} type="text" className="dos" onChange={this.handleChange} onDoubleClick={this.createSub} value={this.state.content}/>
-                    <span className="deleteBtn" onClick={() => {this.props.deleteTodo(this.props.id)}}>&times;</span>
-                </div>
-                <div className="subTodoList">
-                    {this.state.subTodos.map(todo => (
-                        <SubTodo 
-                            key={todo.id} 
-                            todo={todo}
-                            handleChange={this.handleChange}
-                            createSub={this.createSub}
-                            deleteSubTodo={this.deleteSubTodo}
-                        />
-                    ))}
-                </div>
-            </div>
-        );
     }
+    const {isLightMode, light, dark} = useContext(ThemeContext);
+    const theme = isLightMode ? light : dark;
+    return (
+        <div className="todo" style={{ background: theme.bgColor, color: theme.todoColor}}>
+            <div className="mainTodo">
+                <span className="dragBtn"></span>
+                <input style={{ background: theme.bgColor, color: theme.todoColor}} type="text" className="dos" onChange={handleChange} onDoubleClick={createSub} value={todo.content}/>
+                <span className="deleteBtn" onClick={() => {props.deleteTodo(props.id)}}>&times;</span>
+            </div>
+            <div className="subTodoList">
+                {todo.subTodos.map(subTodo => (
+                    <SubTodo 
+                        key={subTodo.id} 
+                        todo={subTodo}
+                        handleChange={handleChange}
+                        createSub={createSub}
+                        deleteSubTodo={deleteSubTodo}
+                    />
+                ))}
+            </div>
+        </div>
+    );
 }
-
-export default EditTodo;
+ 
+export default Todo;

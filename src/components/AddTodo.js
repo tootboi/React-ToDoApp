@@ -1,42 +1,41 @@
-import React, { Component } from 'react';
+import React, { useState, useContext } from 'react';
 import {ThemeContext} from '../contexts/ThemeContext';
 import { v1 as uuidv1 } from 'uuid';
 
-class AddTodo extends Component {
-    static contextType = ThemeContext;
-    state = {
+const AddTodo = (props) => {
+    const [todo, setTodo] = useState({
         content: '',
         id: '',
         subTodos: []
-    }
-    handleChange = (e) => {
-        this.setState({
+    })
+    const handleChange = (e) => {
+        setTodo({
             content: e.target.value,
-            id: uuidv1()
+            id: uuidv1(),
+            subTodos: []
         })
     }
-    handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         //prevents todos with only whitespaces.
-        if(this.state.content.replace(/\s/g, '') !== '') {
-            this.props.addTodo(this.state);
-            this.setState({
-            content: ''
-        })
+        if(todo.content.replace(/\s/g, '') !== '') {
+            props.addTodo(todo);
+            setTodo({
+                content: '',
+                id: '',
+                subTodos: []
+            })
         }
     }
-
-    render(){
-        const {isLightMode, light, dark} = this.context;
-        const theme = isLightMode ? light : dark;
-        return (
-            <div className='form' style={{ background: theme.bgColor, color: theme.subColor}}>
-                <form action="" onSubmit={this.handleSubmit}>
-                    <input required style={{ background: theme.bgColor, color: theme.subColor}} type="text" className="userInput" placeholder="Add a to do" onChange={this.handleChange} value={this.state.content}/>
-                </form>
-            </div>
-        )
-    }
+    const {isLightMode, light, dark} = useContext(ThemeContext);
+    const theme = isLightMode ? light : dark;
+    return (
+        <div className='form' style={{ background: theme.bgColor, color: theme.subColor}}>
+            <form action="" onSubmit={handleSubmit}>
+                <input required style={{ background: theme.bgColor, color: theme.subColor}} type="text" className="userInput" placeholder="Add a to do" onChange={handleChange} value={todo.content}/>
+            </form>
+        </div>
+    );
 }
-
+ 
 export default AddTodo;
