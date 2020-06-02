@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { TodoContext } from '../contexts/TodoContext';
 import { ThemeContext } from '../contexts/ThemeContext';
+import SubTodoList from './SubTodoList';
 
 const TodoDetails = ({todo}) => {
     const {dispatch} = useContext(TodoContext);
@@ -13,6 +14,7 @@ const TodoDetails = ({todo}) => {
                 <input style={{ background: theme.bgColor, color: theme.todoColor}} type="text" className="dos" value={todo.content}/>
                 <span className="deleteBtn" onClick={() => dispatch({type: 'DELETE_TODO', id: todo.id})}>&times;</span>
             </div>
+            <SubTodoList subTodos={todo.subTodos} mainId={todo.id}/>
         </div>
     );
 }
