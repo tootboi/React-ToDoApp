@@ -5,7 +5,7 @@ const SubTodoList = ({subTodos, mainId}) => {
     return subTodos.length ? (
         <div className="subTodoList">
             {subTodos.map(subTodo => {
-                return (<SubTodoDetails subTodo={subTodo} key={subTodo.id}/>);
+                return (<SubTodoDetails subTodo={subTodo} mainId={mainId} key={subTodo.id}/>);
             })}
         </div>
     ) : (
