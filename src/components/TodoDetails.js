@@ -11,8 +11,17 @@ const TodoDetails = ({todo}) => {
         <div className="todo" style={{ background: theme.bgColor, color: theme.todoColor}}>
             <div className="mainTodo">
                 <span className="dragBtn"></span>
-                <input style={{ background: theme.bgColor, color: theme.todoColor}} type="text" className="dos" onChange={(e) => dispatch({type: 'EDIT_TODO', editTodo: {content: e.target.value, id: todo.id, subTodos: todo.subTodos}})} value={todo.content}/>
-                <span className="deleteBtn" onClick={() => dispatch({type: 'DELETE_TODO', id: todo.id})}>&times;</span>
+                <input style={{ background: theme.bgColor, color: theme.todoColor}} 
+                    type="text" 
+                    className="dos" 
+                    onChange={(e) => dispatch({type: 'EDIT_TODO', 
+                        editTodo: {content: e.target.value, id: todo.id, subTodos: todo.subTodos}})}
+                    value={todo.content}
+                    onDoubleClick={() => dispatch({type: 'ADD_SUBTODO', id: todo.id})}
+                />
+                <span className="deleteBtn" onClick={() => dispatch({type: 'DELETE_TODO', id: todo.id})}>
+                    &times;
+                </span>
             </div>
             <SubTodoList subTodos={todo.subTodos} mainId={todo.id}/>
         </div>

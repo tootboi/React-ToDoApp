@@ -18,6 +18,21 @@ export const TodoReducer = (state, action) => {
                     return todo
                 }
             })
+        case 'ADD_SUBTODO':
+            return state.map(todo => {
+                if(todo.id === action.id) {
+                    return todo = {
+                        content: todo.content,
+                        id: todo.id,
+                        subTodos: [...todo.subTodos, {
+                            content: '',
+                            id: uuidv1()
+                        }]
+                    }
+                } else {
+                    return todo
+                }
+            })
         case 'EDIT_SUBTODO':
             return state.map(todo => {
                 if(todo.id === action.editSubTodo.mainId) {

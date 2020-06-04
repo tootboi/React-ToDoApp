@@ -9,7 +9,13 @@ const SubTodoDetails = ({subTodo, mainId}) => {
     return (
         <div className="subTodo">
             <span className="dragBtn"></span>
-            <input style={{ background: theme.bgColor, color: theme.subColor}} type="text" className="dos" onChange={(e) => dispatch({type: 'EDIT_SUBTODO', editSubTodo: {content: e.target.value, id: subTodo.id, mainId: mainId}})} value={subTodo.content} autoFocus/>
+            <input style={{ background: theme.bgColor, color: theme.subColor}} 
+                type="text" className="dos" 
+                onChange={(e) => dispatch({type: 'EDIT_SUBTODO', editSubTodo: {content: e.target.value, id: subTodo.id, mainId: mainId}})} 
+                value={subTodo.content} 
+                autoFocus
+                onDoubleClick={() => dispatch({type: 'ADD_SUBTODO', id: mainId})}
+            />
             <span className="deleteBtn" >&times;</span>
         </div>
     );
