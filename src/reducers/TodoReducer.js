@@ -33,6 +33,18 @@ export const TodoReducer = (state, action) => {
                     return todo
                 }
             })
+        case 'DELETE_SUBTODO':
+            return state.map(todo => {
+                if(todo.id === action.ids.mainId) {
+                    return todo = {
+                        content: todo.content,
+                        id: todo.id,
+                        subTodos: todo.subTodos.filter(subTodo => subTodo.id !== action.ids.subId)
+                    }
+                } else {
+                    return todo
+                }
+            })
         case 'EDIT_SUBTODO':
             return state.map(todo => {
                 if(todo.id === action.editSubTodo.mainId) {

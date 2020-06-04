@@ -16,7 +16,9 @@ const SubTodoDetails = ({subTodo, mainId}) => {
                 autoFocus
                 onDoubleClick={() => dispatch({type: 'ADD_SUBTODO', id: mainId})}
             />
-            <span className="deleteBtn" >&times;</span>
+            <span className="deleteBtn" onClick={() => dispatch({type:'DELETE_SUBTODO', ids:{mainId: mainId, subId: subTodo.id}})}>
+                &times;
+            </span>
         </div>
     );
 }
