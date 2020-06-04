@@ -7,10 +7,8 @@ const AddTodo = (props) => {
     const [content, setContent] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(content);
         //prevents todos with only whitespaces.
         if(content.replace(/\s/g, '') !== '') {
-            console.log(content);
             dispatch({type: 'ADD_TODO', content: content});
             setContent('');
         }
