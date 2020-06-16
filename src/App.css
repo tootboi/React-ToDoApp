@@ -1,7 +1,7 @@
 /* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 
-html, body {
+html, body, #root, .todoApp {
     height: 100%;
     margin: 0;
     font-family: 'Fredoka One', cursive;
@@ -42,8 +42,8 @@ input:focus {
 
 .container {
     overflow: auto;
-    height: 80vh;
-    width: 80vw;
+    height: 80%;
+    width: 80%;
     margin: auto;
     border: 1.5px solid gray;
     border-radius: 6px;
