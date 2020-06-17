@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import AddTodo from './components/AddTodo';
 import ThemeContextProvider from './contexts/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
-import './App.css';
 import TodoList from './components/TodoList';
 import TodoContextProvider from './contexts/TodoContext';
 

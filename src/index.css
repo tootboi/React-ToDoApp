@@ -7,7 +7,142 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+html, body, #root, .todoApp {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Fredoka One', cursive;
+}
+
+html, body {
+    overscroll-behavior-y: none;
+    position: fixed;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 5.5vh;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2.1vh;
+    margin: 0;
+}
+
+input {
+    width: 90%;
+    font-family: 'Fredoka One', cursive;
+    border: none;
+    font-size: medium;
+}
+
+input:focus {
+    outline: none;
+}
+
+.userInput {
+    display: block;
+    font-family: 'Fredoka One', cursive;
+    width: 98%;
+    margin: auto;
+    border: none;
+    border-bottom: 1.5px solid rgb(190, 190, 190);
+    font-size: medium;
+}
+
+.userInput:focus {
+    outline: none;
+}
+
+.container {
+    overflow: auto;
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    border: 1.5px solid gray;
+    border-radius: 6px;
+}
+
+.todo {
+    position: relative;
+    padding: 15px 15px 10px 10px;
+    border-bottom: 1.5px solid rgb(190, 190, 190);
+}
+
+.center {
+    text-align: center;
+    padding: 3vh;
+    border: none;
+}
+
+.form {
+    width: 80vw;
+    margin: auto;
+    margin-top: 1vh;
+}
+
+.deleteBtn {
+    position: absolute;
+    right: 1vw;
+    bottom: 0em;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.dragBtn {
+    display: inline-block;
+    height: .8em;
+    width: .8em;
+    background-color: rgb(190, 190, 190);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dos {
+    margin-left: 1vw;
+}
+
+.fade {
+    opacity: 0;
+    transition: .5s;
+}
+
+.mainTodo {
+    position: relative;
+}
+.subTodoList {
+    position: relative;
+    width: 97%;
+    left: 2%;
+    margin-right: 0;
+}
+.subTodo {
+    position: relative;
+    left: 1%;
+    border-bottom: 2px solid rgb(197, 197, 197);
+}
+
+.subTodo .deleteBtn {
+    color: gray;
+}
+
+.subTodo .dos {
+    color: rgb(51, 51, 51);
+}
+
+.darkMode {
+    background-color: rgb(51, 51, 51);
+    color: gray;
+}
+
+#themeBtn {
+    cursor: pointer;
+    position: absolute;
+    right: 2vw;
+    top: 5vh;
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
 }
