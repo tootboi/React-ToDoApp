@@ -119,6 +119,13 @@ input:focus {
     display: flex;
     /* this vertically aligns children elements */
     align-items: center;
+    margin-bottom: 2%;
+}
+
+.subTodoContainer {
+    display: flex;
+    /* this vertically aligns children elements */
+    align-items: center;
 }
 
 .subTodoList {
