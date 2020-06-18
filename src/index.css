@@ -85,8 +85,7 @@ input:focus {
 
 .deleteBtn {
     position: absolute;
-    right: 1vw;
-    bottom: 0em;
+    right: 2%;
     font-size: x-large;
     cursor: pointer;
 }
@@ -109,9 +108,19 @@ input:focus {
     transition: .5s;
 }
 
-.mainTodo {
-    position: relative;
+.todoContent {
+    display: inline-block;
+    padding-left: 2%;
+    margin: 0;
+    width: 90%;
 }
+
+.todoContainer {
+    display: flex;
+    /* this vertically aligns children elements */
+    align-items: center;
+}
+
 .subTodoList {
     position: relative;
     width: 97%;
@@ -145,4 +154,63 @@ input:focus {
     height: 1.4em;
     width: 1.4em;
     border-radius: 50%;
+}
+
+.overlayContainer {
+    /* to get overlay to display above element with opacity lower than 1 */
+    z-index: 1;
+    position: relative;
+}
+
+.overlayContainer > div{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(32, 32, 32, 0.5);
+}
+
+div.overlay {
+    height: 80%;
+    width: 60%;
+    background-color: #f8f8f8;
+    margin: 10vh 20vw;
+    border-radius: 15px;
+    position: relative;
+}
+  
+.closeBtn {
+    cursor: pointer;
+    font-size: 2em;
+    text-align: center;
+}
+
+input[type='submit'] {
+    position: absolute;
+    display: block;
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.1em;
+    bottom: 1%;
+}
+
+textarea {
+    font-family: 'Fredoka One', cursive;
+    resize: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 1%;
+    border: 0;
+    width: 100%;
+    font-size: large;
+}
+
+textarea:focus {
+    outline-width: 0;
 }
