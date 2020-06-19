@@ -20,10 +20,10 @@ const AddSubTodo = ({id}) => {
     return (
         <div className="overlay" style={{ background: theme.bgColor, color: theme.todoColor}}>
             <div className="closeBtn" onClick={overlayOff}>&otimes;</div>
-            <h1>create sub-todo</h1>
+            <h2>create sub-todo</h2>
             <form action="" onSubmit={createSubTodo}>
                 <textarea name="newTodo" id="" cols="30" rows="10" value={newTodo} onChange={(e) => setTodo(e.target.value)} required style={{color: theme.todoColor}}></textarea>
-                <input type="submit" value="create sub-todo" style={{ background: theme.bgColor, color: theme.todoColor}}/>
+                <input type="submit" value="create sub-todo" style={{color: theme.todoColor}}/>
             </form>
         </div>
     );

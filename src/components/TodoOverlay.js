@@ -19,10 +19,10 @@ const TodoOverlay = ({todo}) => {
     return (
         <div className="overlay" style={{ background: theme.bgColor, color: theme.todoColor}}>
             <div className="closeBtn" onClick={overlayOff}>&otimes;</div>
-            <h1>edit todo</h1>
+            <h2>edit todo</h2>
             <form action="" onSubmit={editTodo}>
                 <textarea name="newTodo" id="" cols="30" rows="10" value={newTodo} onChange={(e) => setTodo(e.target.value)} required style={{color: theme.todoColor}}></textarea>
-                <input type="submit" value="edit todo" style={{ background: theme.bgColor, color: theme.todoColor}}/>
+                <input type="submit" value="edit todo" style={{color: theme.todoColor}}/>
             </form>
         </div>
     );
