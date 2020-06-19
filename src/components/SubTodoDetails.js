@@ -11,6 +11,9 @@ const SubTodoDetails = ({subTodo, mainId}) => {
     const overlayOn = (e) => {
         document.getElementById('overlay'+subTodo.id).style.display = 'block';
     }
+    const addSubTodo = (e) => {
+        document.getElementById('createSub'+mainId).style.display = 'block';
+    }
     return (
         <div className="subTodo">
             <div className="overlayContainer">
@@ -18,8 +21,8 @@ const SubTodoDetails = ({subTodo, mainId}) => {
                     <SubTodoOverlay todo={subTodo} mainId={mainId}/>
                 </div>
             </div>
-            <div className="subTodoContainer" style={{ background: theme.bgColor, color: theme.todoColor}} onDoubleClick={() => dispatch({type: 'ADD_SUBTODO', id: mainId})}>
-                <span className="dragBtn"></span>
+            <div className="subTodoContainer" style={{ background: theme.bgColor, color: theme.todoColor}}>
+                <span className="dragBtn" onClick={addSubTodo}></span>
                 <span className='todoContent' onClick={overlayOn}>{subTodo.content}</span> 
                 <span className="deleteBtn" onClick={() => dispatch({type:'DELETE_SUBTODO', ids:{mainId: mainId, subId: subTodo.id}})}>
                     &times;
