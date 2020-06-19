@@ -120,6 +120,7 @@ input:focus {
     /* this vertically aligns children elements */
     align-items: center;
     margin-bottom: 2%;
+    margin-top: 1%;
 }
 
 .subTodoContainer {

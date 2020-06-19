@@ -21,8 +21,8 @@ const TodoDetails = ({todo}) => {
             </div>
             <div className="mainTodo">     
                 <div className='todoContainer' style={{ background: theme.bgColor, color: theme.todoColor}} onDoubleClick={() => dispatch({type: 'ADD_SUBTODO', id: todo.id})}>
-                    <span className="dragBtn" onClick={overlayOn}></span>
-                    <span className='todoContent'>{todo.content}</span> 
+                    <span className="dragBtn"></span>
+                    <span className='todoContent' onClick={overlayOn}>{todo.content}</span> 
                     <span className="deleteBtn" onClick={() => dispatch({type: 'DELETE_TODO', id: todo.id})}>
                         &times;
                     </span>
