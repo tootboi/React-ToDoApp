@@ -18,6 +18,8 @@ const SubTodoDetails = ({subTodo, mainId}) => {
     }
     const addSubTodo = (e) => {
         document.getElementById('createSub'+mainId).style.display = 'block';
+        //focuses overlay textarea
+        document.getElementById('createSub'+mainId).children[0].children[2].children[0].focus();
     }
     return (
         <div className="subTodo">

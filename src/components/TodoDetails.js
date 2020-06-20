@@ -20,6 +20,8 @@ const TodoDetails = ({todo}) => {
     }
     const addSubTodo = (e) => {
         document.getElementById('createSub'+todo.id).style.display = 'block';
+        //focuses overlay textarea
+        document.getElementById('createSub'+todo.id).children[0].children[2].children[0].focus();
     }
     return (
         <div className="todo" style={{ background: theme.bgColor, color: theme.todoColor}}>
