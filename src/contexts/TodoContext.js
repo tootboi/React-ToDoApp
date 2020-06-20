@@ -7,18 +7,13 @@ const TodoContextProvider = (props) => {
     const[todos, dispatch] = useReducer(TodoReducer, [], () => {
         const localData = localStorage.getItem('todos');
         return localData ? JSON.parse(localData) : [
-        {content: "Implement sub-todo", id:"unique2", 
+        {content: "Add sub-todos by clicking on the bullet points", id:"unique2", 
             subTodos: [
                 {content: "Like this", id: "unique2-1"},
-                {content: "Double click to add a sub-todo", id: "unique2-2"}
             ]},
-        {content: "Animation for deleting (strikethorugh and fade)", id:"unique3", 
+        {content: "Edit todos by clicking on it", id:"unique3", 
             subTodos: [
-
-            ]},
-        {content: "Drag and drop re-ordering", id:"unique4", 
-            subTodos: [
-
+                {content: "Also edit sub-todos by clicking on it", id: "unique3-1"},
             ]},
         ];
     });
