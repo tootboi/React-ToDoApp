@@ -12,6 +12,11 @@ const TodoDetails = ({todo}) => {
 
     const overlayOn = (e) => {
         document.getElementById('overlay'+todo.id).style.display = 'block';
+        //these lines focus the cursor to the end of the textarea.
+        const textarea = document.getElementById('overlay'+todo.id).children[0].children[2].children[0];
+        textarea.value = '';
+        textarea.value = todo.content;
+        textarea.focus();
     }
     const addSubTodo = (e) => {
         document.getElementById('createSub'+todo.id).style.display = 'block';
